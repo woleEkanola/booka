@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router, 
   Switch, 
   Route, 
-  Link} from 'react-router-dom'
+ } from 'react-router-dom'
 
   import Home from './pages/Home'
   import About from './pages/About'
@@ -12,6 +12,7 @@ import {
   import AuthorDashboard from './pages/AuthorDashboard'
   import Shop from './pages/Shop'
   import ReadBook from './pages/ReadBook'
+  import Nav from './components/Nav'
 
 
  
@@ -34,14 +35,7 @@ export default class App extends Component {
       
       <Router>
         <div>
-       <div>
-       <Link to= '/'>Home</Link>
-       <Link to= '/about'>About</Link>
-       <Link to= '/features'> Booka Features</Link>
-       <Link to= '/how-Booka-works'>How it works</Link>
-       <Link to= '/Author-dashboard'>Sign In as Author</Link>
-       <Link to= '/booka-shop'>Buy Books</Link>
-         </div> 
+      <Nav />
       <Switch>
        <Route path= '/' exact component= {Home}/> 
        <Route path= '/about'  component= {About}/> 

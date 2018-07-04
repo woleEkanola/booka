@@ -1,4 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css?family=Dosis|Russo+One');
+
 body {
-  padding: 10px;
+  padding: 0;
+  margin:0;
   font-family: sans-serif;
+ 
+ 
+}
+.hmbg{
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top:0;
+  z-index: -99999;
+  transition: background 1000ms ease;
+  
+}
+.yellow{
+  background: #fcd41b;
+}
+.white{
+  background: #F7F7F8
+}
+.green{
+background: #21ffa3;
+}
+.hmPg img{
+  width:33.3%;
+}
+.hmPg{
+ position: absolute;
+  text-align: center;
+  left: 0;
+  top: 20%;
+  width: 300%;
+  height: auto;
+  transition: margin-left 1000ms ease-in-out;
+}
+.img1{
+  margin-left: 0%;
+}
+.img2{
+  margin-left: -100%;
+}
+.img3{
+  margin-left: -200%;
+}
+.but{
+ position: fixed;
+ bottom: 3%;
+ left: 3%;
+}
+.Nav{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(254, 254, 254, 0.2);
+  width: 100%;
+  height: 70px;
+  box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.4);
+  line-height: 80px;
+  position: fixed;
+  top:0;
+  left: 0;
+} 
+.logo img{
+  margin-top: 10px;
+  margin-left: 30px;
+height: 50px;
+width: auto;
+}
+.links{
+  text-align: right;
+  margin-right: 30px;
+}
+.links a{
+  font-family: 'Dosis', sans-serif;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 13px;
+  color: #000;
+
+}
+.container{
+  margin-top: 80px;
 }
