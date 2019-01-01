@@ -1,0 +1,8 @@
+{
+  "galaxy.meteor.com": {
+     "env": {
+       "MONGO_URL": "mongodb://BookamUser:han473flak722@ds129801.mlab.com:29801/booka"
+     }
+   }
+}
+

@@ -101,7 +101,8 @@ var that = this
      const chapters= x.map( chp=>{
       console.log(this.state.chapterContent[chp.ind].title)
        return(
-        <div key= {chp.ind} >     
+        <div key= {chp.ind} >   
+       
           <h1>{chp.name}</h1>
         <input type='text' onChange= {this.handleChangeTitle.bind(this, chp.ind)} value={ that.state.chapterContent[chp.ind].title} />
         <textarea type='text' onChange= {this.handleChangeText.bind(this, chp.ind)} value={ that.state.chapterContent[chp.ind].text} />
@@ -112,7 +113,8 @@ var that = this
     
   
     return (
-      <div className="container">
+      <div className="edtBk">
+        
     <h1>{this.state.book.bookTitle} </h1>
    <label htmlFor = 'description'> Book Description</label> <textarea onChange={this.handleChangeDescription.bind(this)} name='description' value= {this.state.book.description}></textarea>
     <div>
@@ -125,8 +127,11 @@ var that = this
       <div>
 {chapters}
         </div>
+        <div className= 'controls' >
+        <img src={this.state.book.bookCover} className='' />
        <button onClick={this.save.bind(this)}> Save </button> 
      {this.state.canPublish ? <button onClick={this.publish.bind(this)}> Publish  </button>: '' }
+    </div>
     </div>
 
    

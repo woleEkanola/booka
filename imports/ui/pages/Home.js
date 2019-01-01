@@ -9,6 +9,7 @@ export default class Home extends Component {
       img: ['img1', 'img2', 'img3'],
       color: ['yellow', 'green', 'white'],
       colorr: 0,
+      activeU:true
      
     }
   }
@@ -16,7 +17,7 @@ export default class Home extends Component {
 setInterval(this.changeImg.bind(this), 10000)
   }
   changeImg(){
-   
+   var that= this
     let x = this.state.colorr
     let y = this.state.color.length - 1
     
@@ -34,6 +35,19 @@ x += 1
     }
   this.setState({colorr: x})
   console.log(dir)
+
+  switch (x) {
+    case 0:
+        that.setState({activeU: true, activeD:false, activeT:false});
+        break;
+    case 1:
+that.setState({activeU: false, activeD:true, activeT:false});
+        break;
+    case 2:
+    that.setState({activeU: false, activeD:false, activeT:true});
+        break;
+    
+}
   } 
   render() {
     const x = this.state.colorr
@@ -45,7 +59,10 @@ x += 1
        <img src='bk2.png' />
        <img src='bk3.png' />
       </div>
-      <p className= 'but' onClick={this.changeImg.bind(this)} >xxx</p>
+
+      <p className=  {`sldrtxt  ${this.state.activeU ? 'un': '' }`}>Booka gets your books to the readers in no time!</p>
+      <p className=  {`sldrtxt  ${this.state.activeD ?'deux':'' }`}>Focus on creating content , We will do the DIRTY WORK</p>
+      <p className=  {`sldrtxt  ${this.state.activeT ? 'troir': '' }`}>Your books availble to readers on all platforms no Technology barrier!</p>
       </div>
     );
   }

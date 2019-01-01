@@ -49,11 +49,14 @@ this.setState({book: z})
    
    
         return (
-      <div className="container">
+      <div className="vwBk">
+      <p>Chapter {cc +1}</p>
       <h1>{title}</h1>
        <Markdown>{text}</Markdown>
        <div className='controls'>
-       <p onClick= {this.prevChapter.bind(this)}> previous </p>   <p  onClick= {this.nextChapter.bind(this)}> next </p>
+       <img src={this.state.book.bookCover} className='' />  
+       <p>{this.state.book.bookTitle}</p>
+       <button onClick= {this.prevChapter.bind(this)}> previous </button>   <button  onClick= {this.nextChapter.bind(this)}> next </button>
        </div>
       </div>
     );

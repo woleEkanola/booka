@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Books} from '../../api/books'
+import { withTracker } from 'meteor/react-meteor-data';
 
 import EditBook from '../components/EditBook'
 
@@ -7,7 +8,7 @@ import {
   Route, 
   Link} from 'react-router-dom'
 
-export default class BookList extends Component {
+ class BookList extends Component {
   constructor(props){
     super(props)
     this.state= {
@@ -32,7 +33,9 @@ export default class BookList extends Component {
  }
 
   render() {
-    const displayBooks = this.props.books.map(book=>{
+    let displayBooks = '';
+    if(this.props.books){
+   displayBooks = this.props.books.map(book=>{
       return(
         <div key= {book._id} >
         <Link to={`${this.props.match.path}/${book._id}`} onClick={this.hideList.bind(this)} >
@@ -43,11 +46,12 @@ export default class BookList extends Component {
         </div>
       )
     })
+  }
     return (
-      <div className="container">
+      <div className="bkLstBg">
        <h1> {this.props.books? `You have ${this.props.books.length} books`: 'You currently have not created any book'}</h1>
        <hr/>
-     <div>
+     <div className='bkLst' >
        {this.state.showList  ? displayBooks: ''}
        </div>  
        <Route path= {`${this.props.match.path}/:id`}  render= {props=>(<EditBook {...props} hideList= {this.hideList.bind(this)} />)}  />
@@ -55,3 +59,9 @@ export default class BookList extends Component {
     );
   }
 }
+
+export default withTracker(() => {
+  return {
+    books: Books.find({}).fetch(),
+  };
+})( BookList);

@@ -12,12 +12,11 @@ export default class Nav extends Component {
      
 <div className='Nav' >
 <div className='logo' >
-<img src='booka.png' /> 
+<Link to= '/'><img src='booka.png' /> </Link>
 </div>
 <div className='links' >
 <Link to= '/'>Home</Link>
 <Link to= '/about'>About</Link>
-<Link to= '/features'> Booka Features</Link>
 <Link to= '/how-Booka-works'>How it works</Link>
 <Link to= '/Author-dashboard'>Sign In as Author</Link>
 <Link to= '/booka-shop'>Buy Books</Link>

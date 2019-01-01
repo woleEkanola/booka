@@ -34,10 +34,9 @@ import {
           )
       })
     return (
-      <div className="container">
-       <h1> Booka Shop</h1>
-      <hr />
-      <div>
+      <div className="shop">
+     
+      <div className='bkLst'>
           {books}
           </div>
       </div>
